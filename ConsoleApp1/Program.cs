@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,49 +9,28 @@ namespace ConsoleApp1
 {
     internal class Program
     {
-    static void checkVvod(double num)
+        class Soda
         {
-            string input;
-            Console.WriteLine("Введите число:");
-            input = Console.ReadLine();
-            while (!double.TryParse(input, out num))
+            public void show_my_drink(string ing)
             {
-                Console.WriteLine("Вы ввели что-то неправильное. Пожалуйста, введите число:");
-                input = Console.ReadLine();
+                if( ing == null || ing == "" )
+                {
+                    Console.WriteLine("Обычная газировка");
+                }
+                else
+                {
+                    Console.WriteLine($"Газировка + {ing}");
+                }
             }
         }
-
-    static void Main(string[] args)
+        static void Main(string[] args)
         {
-            int num = 0;
-            Console.WriteLine("Введите номер операции: ");
-            Console.WriteLine("1 - Сложение\n2 - Вычитание\n3 - Произведение\n4 - Деление\n5 - Завершить программу");
-            w1:
-            num = int.Parse(Console.ReadLine());
-            if(num < 1 || num > 5)
-            {
-                Console.WriteLine("Вы ввели некорректное число, попробуйте ещё раз: ");
-                goto w1;
-            }
-            switch (num)
-            {
-                case 1:
-
-                    return;
-                case 2:
-
-                    return;
-                case 3:
-
-                    return;
-                case 4:
-
-                    return;
-                case 5:
-                    Console.WriteLine("Вы завершили программу");
-                    return;
-            }
-
+            Soda drink1 = new Soda();
+            Soda drink2 = new Soda();
+            Soda drink3 = new Soda();
+            drink1.show_my_drink("Малина");
+            drink2.show_my_drink("");
+            drink3.show_my_drink(null);
         }
     }
 }
