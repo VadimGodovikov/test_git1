@@ -67,7 +67,7 @@ namespace ConsoleApp1
                 drink.Print();
             }
 
-            using (StreamWriter sw = new StreamWriter("drinks.txt")) // запись в файл
+            using (StreamWriter sw = new StreamWriter(@"C:\Users\vadik\source\repos\ConsoleApp1\ConsoleApp1\drinks.txt")) // запись в файл
             {
                 foreach (var drink in drinks)
                 {
